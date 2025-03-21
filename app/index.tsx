@@ -8,20 +8,21 @@ const index = () => {
 
       <Image style = {styles.images} source = { require('../assets/driver.png') }/>
       <Text  style = {styles.h1} >Motorista</Text>
-      <Text style = {styles.text} >Ofereça carona e ganhe dinheiro</Text>
+      <Text style = {styles.text} >Ofereça carona e ganhe dinheiro.</Text>
 
       <Image style = {styles.images} source = { require('../assets/passenger.png') }/>
       <Text style = {styles.h1} >Passageiro</Text>
-      <Text style = {styles.text} >Encontre caronas e economize</Text>
+      <Text style = {styles.text} >Encontre caronas e economize.</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   h1: {
-    fontSize: 25,
+    fontSize: 30,
     position: "relative",
-    textAlign: "center"
+    textAlign: "center",
+    paddingHorizontal: 20
   },
 
   images: {
@@ -29,13 +30,15 @@ const styles = StyleSheet.create({
     height: 150,
     alignSelf: "center",
     marginTop: 100,
-    marginBottom: 20
+    marginBottom: 20,
+    paddingHorizontal: 20
   },
 
   text: {
     fontSize: 20,
     position: "relative",
-    textAlign: "center"
+    textAlign: "center",
+    paddingHorizontal: 20
   }
 })
 
