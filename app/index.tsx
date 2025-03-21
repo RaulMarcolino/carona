@@ -4,6 +4,7 @@ import React from 'react'
 const index = () => {
   return (
     <View>
+      
       <Text style = {styles.h1} >Como você deseja usar o app?</Text>
 
       <Image style = {styles.images} source = { require('../assets/driver.png') }/>
