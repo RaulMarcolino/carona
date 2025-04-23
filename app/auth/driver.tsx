@@ -15,7 +15,7 @@ const driver = () => {
 
         <ScrollView>
 
-        <View>
+        <View style = {styles.form}>
             <Text style = {styles.text}>Vamos realizar o seu cadastro, só precisamos de algumas informações:</Text>
         </View>
 
@@ -54,7 +54,7 @@ const driver = () => {
         </ScrollView>
 
         <View>
-          <Text>Cadastrar</Text>
+          <Text style={{ color: '#FFF', fontSize: 22 }}>Cadastrar</Text>
         </View>
     </>
   )
@@ -76,30 +76,28 @@ const styles = StyleSheet.create({
       flexDirection: 'row'
     },
 
-    container: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      margin: 15
-    },
-
     form: {
+      backgroundColor: '#252525',
       paddingHorizontal: 25,
-      paddingVertical: 18,
+      paddingVertical: 18
     },
 
     formfields:{
-      fontSize: 18
+      fontSize: 18,
+      color: '#FFF',
+      marginBottom: 8
     },
 
     formheader: {
       fontSize: 22,
       fontWeight: 'bold',
       marginBottom: 16,
+      color: '#FFF'
     },
 
     forminput: {
-      backgroundColor: '#fdfdfd',
-      borderWidth: 1,
+      backgroundColor: '#202020',
+      borderWidth: 1.5,
       borderColor: '#c0c0c0',
       borderRadius: 8,
       height: 42,
@@ -119,6 +117,7 @@ const styles = StyleSheet.create({
       paddingHorizontal: 25,
       fontSize: 24,
       paddingVertical: 18,
+      color: '#FFF'
     },
   });  
 export default driver
