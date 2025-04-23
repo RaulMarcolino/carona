@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Button, ScrollView } from 'react-native'
 import React, {useState} from 'react'
 import {MaterialIcons} from '@expo/vector-icons'
 import {Link} from 'expo-router'
@@ -13,63 +13,61 @@ const driver = () => {
           <Text style = {styles.header}>Cadastro de Novo Motorista</Text>
         </View>
 
-        <View style = {styles.container}>
+        <ScrollView>
+
+        <View>
             <Text style = {styles.text}>Vamos realizar o seu cadastro, só precisamos de algumas informações:</Text>
         </View>
 
-        <View style = {styles.container}>
-          <Text style = {styles.text}>Informações Pessoais</Text>
+        <View style = {styles.form}>
+          <Text style = {styles.formheader}>Informações Pessoais</Text>
 
           <Text style = {styles.formfields}>Nome Completo</Text>
-          <TextInput />
+          <TextInput style = {styles.forminput} />
 
           <Text style = {styles.formfields}>Email</Text>
-          <TextInput />
+          <TextInput style = {styles.forminput} />
 
           <Text style = {styles.formfields}>Telefone/Whatsapp</Text>
-          <TextInput />
+          <TextInput style = {styles.forminput} />
 
           <Text style = {styles.formfields}>Senha</Text>
-          <TextInput />
+          <TextInput style = {styles.forminput} />
         </View>
-        
-        <View style = {styles.container}>
-          <Text style = {styles.text}>Informações do Veículo</Text>
+
+        <View style = {styles.form}>
+          <Text style = {styles.formheader}>Informações do Veículo</Text>
 
           <Text style = {styles.formfields}>Marca</Text>
-          <TextInput />
+          <TextInput style = {styles.forminput} />
 
           <Text style = {styles.formfields}>Modelo</Text>
-          <TextInput />
+          <TextInput style = {styles.forminput} />
           
           <Text style = {styles.formfields}>Ano</Text>
-          <TextInput />
+          <TextInput style = {styles.forminput} />
           
           <Text style = {styles.formfields}>Placa</Text>
-          <TextInput />
+          <TextInput style = {styles.forminput} />
+        </View>
+
+        </ScrollView>
+
+        <View>
+          <Text>Cadastrar</Text>
         </View>
     </>
   )
 }
 
 const styles = StyleSheet.create({
-    container: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      margin: 15
-    },
     arrow: {
       marginLeft: 15,
       color: '#FFF',
       fontSize: 35,
       alignSelf: 'center'
     },
-    text: {
-      marginHorizontal: 15,
-      fontSize: 20,
-      fontWeight: 'bold',
-      textAlign: 'left'
-    },
+
     blackboard: {
       backgroundColor: '#000',
       height: 80,
@@ -77,6 +75,38 @@ const styles = StyleSheet.create({
       justifyContent: 'flex-start',
       flexDirection: 'row'
     },
+
+    container: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: 15
+    },
+
+    form: {
+      paddingHorizontal: 25,
+      paddingVertical: 18,
+    },
+
+    formfields:{
+      fontSize: 18
+    },
+
+    formheader: {
+      fontSize: 22,
+      fontWeight: 'bold',
+      marginBottom: 16,
+    },
+
+    forminput: {
+      backgroundColor: '#fdfdfd',
+      borderWidth: 1,
+      borderColor: '#c0c0c0',
+      borderRadius: 8,
+      height: 42,
+      marginBottom: 16,
+      padding: 8
+    },
+
     header: {
       color: '#FFF',
       fontSize: 22, 
@@ -84,11 +114,11 @@ const styles = StyleSheet.create({
       fontWeight: 'bold', 
       marginLeft: 25
     },
-    formfields:{
-      textAlign: 'left',
-      fontSize: 18,
-      marginTop: 10,
-      marginBottom: 5
-    }
+
+    text: {
+      paddingHorizontal: 25,
+      fontSize: 24,
+      paddingVertical: 18,
+    },
   });  
 export default driver
