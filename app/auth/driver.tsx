@@ -18,7 +18,24 @@ const driver = () => {
         <View style = {styles.container}>
           <Text style = {styles.text}>Informações Pessoais</Text>
           <Text style = {styles.formfields}>Nome Completo</Text>
-          <TextInput></TextInput>
+          <TextInput />
+          <Text style = {styles.formfields}>Email</Text>
+          <TextInput />
+          <Text style = {styles.formfields}>Telefone/Whatsapp</Text>
+          <TextInput />
+          <Text style = {styles.formfields}>Senha</Text>
+          <TextInput />
+        </View>
+        <View style = {styles.container}>
+          <Text style = {styles.text}>Informações do Veículo</Text>
+          <Text style = {styles.formfields}>Marca</Text>
+          <TextInput />
+          <Text style = {styles.formfields}>Modelo</Text>
+          <TextInput />
+          <Text style = {styles.formfields}>Ano</Text>
+          <TextInput />
+          <Text style = {styles.formfields}>Placa</Text>
+          <TextInput />
         </View>
     </>
   )
