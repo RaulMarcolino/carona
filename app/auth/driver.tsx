@@ -1,24 +1,24 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, TextInput } from 'react-native'
+import React, {useState} from 'react'
 import {MaterialIcons} from '@expo/vector-icons'
+import {Link} from 'expo-router'
 
 const driver = () => {
   return (
     <>
-        <View style = {{backgroundColor: '#000', 
-        height: 80,
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        flexDirection: 'row'}}>
-          <MaterialIcons  name = 'arrow-back' style = {styles.arrow}/>
-          <Text style = {{color: '#FFF',
-            fontSize: 22, 
-            textAlign: 'center',
-            fontWeight: 'bold', 
-            marginLeft: 25}}>Cadastro de Novo Motorista</Text>
+        <View style = {styles.blackboard}>
+          <Link href = "/" >
+            <MaterialIcons  name = 'arrow-back' style = {styles.arrow}/>
+          </Link>
+          <Text style = {styles.header}>Cadastro de Novo Motorista</Text>
         </View>
         <View style = {styles.container}>
-            <Text>Vamos realizar o se cadastro, só precisamos de algumas informações:</Text>
+            <Text style = {styles.text}>Vamos realizar o seu cadastro, só precisamos de algumas informações:</Text>
+        </View>
+        <View style = {styles.container}>
+          <Text style = {styles.text}>Informações Pessoais</Text>
+          <Text style = {styles.formfields}>Nome Completo</Text>
+          <TextInput></TextInput>
         </View>
     </>
   )
@@ -31,13 +31,36 @@ const styles = StyleSheet.create({
       margin: 15
     },
     arrow: {
-        marginLeft: 15,
-        color: '#FFF',
-        fontSize: 35,
-        alignSelf: 'center'
+      marginLeft: 15,
+      color: '#FFF',
+      fontSize: 35,
+      alignSelf: 'center'
     },
     text: {
-        
+      marginHorizontal: 15,
+      fontSize: 20,
+      fontWeight: 'bold',
+      textAlign: 'left'
+    },
+    blackboard: {
+      backgroundColor: '#000',
+      height: 80,
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      flexDirection: 'row'
+    },
+    header: {
+      color: '#FFF',
+      fontSize: 22, 
+      textAlign: 'center',
+      fontWeight: 'bold', 
+      marginLeft: 25
+    },
+    formfields:{
+      textAlign: 'left',
+      fontSize: 18,
+      marginTop: 10,
+      marginBottom: 5
     }
   });  
 export default driver
