@@ -1,9 +1,12 @@
-import { View, Text, StyleSheet, TextInput, Button, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Button, ScrollView, Pressable} from 'react-native'
 import React, {useState} from 'react'
 import {MaterialIcons} from '@expo/vector-icons'
 import {Link} from 'expo-router'
+import { useRouter } from 'expo-router'
 
-const driver = () => {
+const Driver = () => {
+
+  const router = useRouter()
   return (
     <>
         <View style = {styles.blackboard}>
@@ -53,8 +56,10 @@ const driver = () => {
 
         </ScrollView>
 
-        <View>
-          <Text style={{ color: '#FFF', fontSize: 22 }}>Cadastrar</Text>
+        <View style = {styles.button}>
+          <Pressable onPress={() => router.push('/')}>
+            <Text style={{ color: '#FFF', fontSize: 22 }}>Cadastrar</Text>
+          </Pressable>
         </View>
     </>
   )
@@ -74,6 +79,18 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'flex-start',
       flexDirection: 'row'
+    },
+
+    button: {
+      backgroundColor: '#000',
+      width: '90%',
+      padding: 10,
+      borderRadius: 8,
+      marginTop: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
+      alignSelf: 'center',
+      marginBottom: 20
     },
 
     form: {
@@ -106,7 +123,7 @@ const styles = StyleSheet.create({
       fontSize: 22, 
       textAlign: 'center',
       fontWeight: 'bold', 
-      marginLeft: 25
+      marginLeft: 10,
     },
 
     text: {
@@ -115,4 +132,4 @@ const styles = StyleSheet.create({
       paddingVertical: 18,
     },
   });  
-export default driver
+export default Driver
