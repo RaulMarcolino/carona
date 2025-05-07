@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Button, ScrollView, Pressable} from 'react-native'
+import { View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity, Pressable} from 'react-native'
 import React, {useState} from 'react'
 import {MaterialIcons} from '@expo/vector-icons'
 import {Link} from 'expo-router'
@@ -57,7 +57,7 @@ const Driver = () => {
         </ScrollView>
 
         <View style = {styles.button}>
-          <Pressable onPress={() => router.push('/')}>
+          <Pressable onPress={() => router.push('/(tabs)/home')}>
             <Text style={{ color: '#FFF', fontSize: 22 }}>Cadastrar</Text>
           </Pressable>
         </View>
