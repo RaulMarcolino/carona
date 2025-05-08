@@ -4,7 +4,14 @@ import React from 'react'
 const Travels = () => {
     return (
         <View>
-            <Text>Travels</Text>
+          <View>
+            <View>
+
+            </View>
+            <View>
+              
+            </View>
+          </View>
         </View>
     )
 }
