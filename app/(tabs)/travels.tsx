@@ -31,6 +31,16 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginTop: 20,
     marginHorizontal: 20
+  },
+  blankcard: {
+    backgroundColor: '#FFF',
+    height: 70,
+    width: 70,
+    borderRadius: 7,
+    marginLeft: 165,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexDirection: 'row'
   }
 })
 
