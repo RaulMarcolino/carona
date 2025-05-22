@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity, Pressable} from 'react-native'
+import { View, Text, StyleSheet, TextInput, ScrollView, Alert, Pressable} from 'react-native'
 import React, {useState} from 'react'
 import {MaterialIcons} from '@expo/vector-icons'
 import {Link} from 'expo-router'
@@ -7,6 +7,39 @@ import { useRouter } from 'expo-router'
 const Driver = () => {
 
   const router = useRouter()
+  const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [tel, setTel] = useState("");
+    const handleSaveUserPassenger = async () => {
+      console.log(name);
+      console.log(email);
+      console.log(tel);
+      console.log(password);
+  
+      const response = await fetch("http://localhost:8000/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+  
+        body: JSON.stringify({
+          name,
+          email,
+          type: "passenger",
+          telephone: tel,
+          password,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      if (response.ok) {
+        Alert.alert("Cadastro realizado com sucesso!");
+        router.push("/(tabs)/home");
+      } else {
+        Alert.alert("Erro ao cadastrar passageiro:", data);
+      }
+    };
   return (
     <>
         <View style = {styles.blackboard}>
@@ -23,19 +56,19 @@ const Driver = () => {
         </View>
 
         <View style = {styles.form}>
-          <Text style = {styles.formheader}>Informações Pessoais</Text>
+            <Text style = {styles.formheader}>Informações Pessoais</Text>
 
-          <Text style = {styles.formfields}>Nome Completo</Text>
-          <TextInput style = {styles.forminput} />
-
-          <Text style = {styles.formfields}>Email</Text>
-          <TextInput style = {styles.forminput} />
-
-          <Text style = {styles.formfields}>Telefone/Whatsapp</Text>
-          <TextInput style = {styles.forminput} />
-
-          <Text style = {styles.formfields}>Senha</Text>
-          <TextInput style = {styles.forminput} />
+            <Text style={{ fontSize: 18 }}>Nome Completo</Text>
+            <TextInput onChangeText={(txt) => setName(txt)} value={name} style={styles.forminput} />
+          
+            <Text style={{ fontSize: 18 }}>Email</Text>
+            <TextInput onChangeText={(txt) => setEmail(txt)} value={email} style={styles.forminput} />
+          
+            <Text style={{ fontSize: 18 }}>Telefone/Whatsapp</Text>
+            <TextInput onChangeText={(txt) => setTel(txt)} value={tel} style={styles.forminput} />
+          
+            <Text style={{ fontSize: 18 }}>Senha</Text>
+            <TextInput onChangeText={(txt) => setPassword(txt)} value={password} style={styles.forminput} />
         </View>
 
         </ScrollView>
